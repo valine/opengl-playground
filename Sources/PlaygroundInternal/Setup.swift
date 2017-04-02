@@ -13,7 +13,7 @@ import UIKit
 
 public func _setup() {
     let viewController = GameViewController()
-    
+
     PlaygroundPage.current.liveView = viewController
 }
 
