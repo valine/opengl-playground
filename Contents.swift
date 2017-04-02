@@ -1,10 +1,6 @@
-//
-//  GameViewController.swift
-//  wwdc-app
-//
-//  Created by Lukas Valine on 4/2/17.
-//  Copyright © 2017 Lukas Valine. All rights reserved.
-//
+import UIKit
+import PlaygroundSupport
+
 
 import GLKit
 import OpenGLES
@@ -157,21 +153,21 @@ class GameViewController: GLKViewController {
         glDrawArrays(GLenum(GL_TRIANGLES) , 0, 36)
         
         // Render the object again with ES2
-//        glUseProgram(program)
-//        
-//        withUnsafePointer(to: &modelViewProjectionMatrix, {
-//            $0.withMemoryRebound(to: Float.self, capacity: 16, {
-//                glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, $0)
-//            })
-//        })
-//        
-//        withUnsafePointer(to: &normalMatrix, {
-//            $0.withMemoryRebound(to: Float.self, capacity: 9, {
-//                glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, $0)
-//            })
-//        })
-//        
-//        glDrawArrays(GLenum(GL_TRIANGLES), 0, 36)
+        //        glUseProgram(program)
+        //
+        //        withUnsafePointer(to: &modelViewProjectionMatrix, {
+        //            $0.withMemoryRebound(to: Float.self, capacity: 16, {
+        //                glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, $0)
+        //            })
+        //        })
+        //
+        //        withUnsafePointer(to: &normalMatrix, {
+        //            $0.withMemoryRebound(to: Float.self, capacity: 9, {
+        //                glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, $0)
+        //            })
+        //        })
+        //
+        //        glDrawArrays(GLenum(GL_TRIANGLES), 0, 36)
     }
     
     // MARK: -  OpenGL ES 2 shader compilation
@@ -371,3 +367,11 @@ var gCubeVertexData: [GLfloat] = [
     -0.5, -0.5, -0.5,      0.0, 0.0, -1.0,
     -0.5, 0.5, -0.5,        0.0, 0.0, -1.0
 ]
+
+
+public func _setup() {
+    let viewController = GameViewController()
+    
+    PlaygroundPage.current.liveView = viewController
+}
+
